@@ -1,0 +1,111 @@
+.page {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.header {
+  display: flex;
+}
+
+.button {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.create-event-btn {
+  margin: 10px 0 0 70px;
+}
+
+.navigation__today-btn {
+  margin: 10px 30px 0;
+}
+
+.icon-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__content {
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #cccccc45;
+  z-index: 10;
+}
+
+.popup__content {
+  position: absolute;
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.calendar__header {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 70px;
+}
+
+.day-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15%;
+  height: 100px;
+  text-transform: uppercase;
+  color: grey;
+}
+.day-label__day-name {
+  font-size: 16px;
+  margin-top: 5px;
+}
+.day-label__day-number {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.time-slot {
+  height: 60px;
+  width: 70px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*# sourceMappingURL=styles.css.map */
