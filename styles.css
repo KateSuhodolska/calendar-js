@@ -1,4 +1,6 @@
 .page {
+  width: 80%;
+  margin: auto;
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -8,6 +10,7 @@
 
 .header {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .button {
@@ -70,10 +73,50 @@
   display: none;
 }
 
+.calendar {
+  width: 100%;
+  overflow: scroll;
+}
+.calendar ::-webkit-scrollbar {
+  display: none;
+}
 .calendar__header {
   display: flex;
   flex-direction: row;
-  padding: 10px 70px;
+  padding: 10px 0 10px 100px;
+}
+.calendar__week {
+  display: flex;
+  width: 100%;
+}
+.calendar__week-container {
+  display: flex;
+}
+.calendar__day {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.calendar__time-slot {
+  height: 60px;
+  border-left: 0.5px solid grey;
+  border-top: 0.5px solid grey;
+}
+
+.header-line {
+  width: 100%;
+  border-top: 0.1px solid grey;
+}
+
+.time-slot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.time-slot__time {
+  margin: 0 auto;
+  position: relative;
+  top: 12px;
 }
 
 .day-label {
@@ -94,9 +137,16 @@
   margin-top: 20px;
 }
 
+.timescale-line {
+  position: relative;
+  top: 0.7px;
+  width: 20px;
+  border-top: 0.5px solid grey;
+}
+
 .time-slot {
   height: 60px;
-  width: 70px;
+  width: 100px;
 }
 
 * {

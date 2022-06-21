@@ -1,7 +1,7 @@
 import { createNumbersArray } from "../common/createNumbersArray.js";
 
 const getTimeSlot = (time, format) => `<div class="time-slot">
-    <span class="time-slot__time">${time} ${format}</span>
+    <span class="time-slot__time">${time} ${format}</span><span class="timescale-line"></span>
     </div>`;
 
 export const renderTimescale = () => {
