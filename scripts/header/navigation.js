@@ -34,6 +34,10 @@ const onChangeWeek = (event) => {
             shmoment(getItem("displayedWeekStart")).subtract("days", 7).result()
         );
     }
+    const todayButton = event.target.closest(".navigation__today-btn");
+    if (todayButton) {
+        setItem("displayedWeekStart", getStartOfWeek(new Date()));
+    }
 
     renderCurrentMonth();
     renderHeader();
