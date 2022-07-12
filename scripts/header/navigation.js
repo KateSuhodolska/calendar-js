@@ -10,15 +10,18 @@ const displayedMonthElem = document.querySelector(
 );
 
 function renderCurrentMonth() {
+    // отрисовать месяц, к которому относиться текущая неделя (getDisplayedMonth)
+    // вставить в .navigation__displayed-month
+
     displayedMonthElem.textContent = getDisplayedMonth(
         getItem("displayedWeekStart")
     );
-
-    // отрисовать месяц, к которому относиться текущая неделя (getDisplayedMonth)
-    // вставить в .navigation__displayed-month
 }
 
 const onChangeWeek = (event) => {
+    // при переключении недели обновите displayedWeekStart в storage
+    // и перерисуйте все необходимые элементы страницы (renderHeader, renderWeek, renderCurrentMonth)
+
     const nextWeeks = event.target.closest(".fa-chevron-right");
     if (nextWeeks) {
         setItem(
@@ -26,7 +29,6 @@ const onChangeWeek = (event) => {
             shmoment(getItem("displayedWeekStart")).add("days", 7).result()
         );
     }
-
     const previousWeeks = event.target.closest(".fa-chevron-left");
     if (previousWeeks) {
         setItem(
@@ -42,8 +44,6 @@ const onChangeWeek = (event) => {
     renderCurrentMonth();
     renderHeader();
     renderWeek();
-    // при переключении недели обновите displayedWeekStart в storage
-    // и перерисуйте все необходимые элементы страницы (renderHeader, renderWeek, renderCurrentMonth)
 };
 
 export const initNavigation = () => {

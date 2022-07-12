@@ -14,7 +14,7 @@
 }
 .header-line {
   width: 100%;
-  border-top: 0.1px solid grey;
+  border-top: 0.1px solid #b4b4b4;
   margin-bottom: 100px;
 }
 
@@ -40,11 +40,12 @@
 }
 
 .navigation__displayed-month {
-  font-size: 20px;
+  font-size: 26px;
   color: #555555;
 }
 
 .icon-button {
+  font-size: 24px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -117,14 +118,10 @@
   flex-grow: 1;
 }
 .calendar__time-slot {
+  position: relative;
   height: 60px;
   border-left: 0.5px solid #b4b4b4;
   border-top: 0.5px solid #b4b4b4;
-}
-
-.header-line {
-  width: 100%;
-  border-top: 0.1px solid #b4b4b4;
 }
 
 .time-slot {
@@ -157,6 +154,11 @@
   font-size: 30px;
 }
 
+.time-slot {
+  height: 60px;
+  width: 100px;
+}
+
 .timescale-line {
   position: relative;
   top: -59.3px;
@@ -164,9 +166,34 @@
   border-top: 0.5px solid #b4b4b4;
 }
 
-.time-slot {
-  height: 60px;
-  width: 100px;
+.create-event {
+  position: relative;
+  padding: 10px;
+}
+.create-event__close-btn {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  right: 5px;
+  top: 0;
+}
+
+.event-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  padding-top: 5px;
+  z-index: 2;
+  width: 90%;
+  margin-left: 5%;
+  height: 160px;
+  background-color: #ffc0cb;
+  color: #fff;
+  border-radius: 5px;
+}
+.event__title {
+  display: block;
 }
 
 * {

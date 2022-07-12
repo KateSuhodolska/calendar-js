@@ -5,6 +5,9 @@ const getTimeSlot = (time, format) => `<div class="time-slot">
     </div>`;
 
 export const renderTimescale = () => {
+    // ф-ция должна генерировать разметку для боковой шкалы времени (24 часа)
+    // полученную разметку вставьте на страницу с помощью innerHTML в .calendar__time-scale
+
     const timeScale = document.querySelector(".calendar__time-scale");
 
     const timeScaleSlots = createNumbersArray(1, 24);
@@ -22,7 +25,4 @@ export const renderTimescale = () => {
         })
         .join("");
     timeScale.innerHTML = stringTimeSlots;
-
-    // ф-ция должна генерировать разметку для боковой шкалы времени (24 часа)
-    // полученную разметку вставьте на страницу с помощью innerHTML в .calendar__time-scale
 };

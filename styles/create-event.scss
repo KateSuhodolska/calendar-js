@@ -1,1 +1,12 @@
 // стили формы события внутри модального окна
+.create-event {
+    position: relative;
+    padding: 10px;
+    &__close-btn {
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        right: 5px;
+        top: 0;
+    }
+}
