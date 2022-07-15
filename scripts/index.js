@@ -5,7 +5,6 @@ import { initNavigation } from "./header/navigation.js";
 import { setItem } from "./common/storage.js";
 import { getStartOfWeek } from "./common/time.utils.js";
 import { initEventForm } from "./events/createEvent.js";
-import { renderRedLine } from "./calendar/redLine.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // инициализация всех элементов
@@ -15,5 +14,4 @@ document.addEventListener("DOMContentLoaded", () => {
     renderHeader();
     initNavigation();
     initEventForm();
-    renderRedLine();
 });

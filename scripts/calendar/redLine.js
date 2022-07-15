@@ -1,3 +1,6 @@
+import { getItem, setItem } from "../common/storage.js";
+import shmoment from "../common/shmoment.js";
+
 export function renderRedLine() {
     const redLine = document.createElement("div");
     redLine.style.borderTop = "2px solid red"; //styles
@@ -9,7 +12,15 @@ export function renderRedLine() {
     const timeSlot = document.querySelector(
         `div[data-day="${new Date().getDate()}"] div[data-time="${new Date().getHours()}"]`
     );
-    timeSlot.append(redLine);
+    if (
+        getItem(displayedWeekStart) <=
+        shmoment(currentWeek).add("days", 7).result() &&
+        getItem(displayedWeekStart) >= currentWeek
+    ) {
+        timeSlot.append(redLine);
+    }
+    el.start <= shmoment(currentWeek).add("days", 7).result() &&
+        el.start >= currentWeek;
 
     setInterval(() => {
         if (currentMin === new Date().getMinutes()) {
