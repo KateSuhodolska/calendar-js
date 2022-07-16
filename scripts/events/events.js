@@ -35,7 +35,7 @@ const createEventElement = (event) => {
 
     eventContainer.innerHTML = `<span class="event__title">${event.title}</span><span class="event__time">${event.startTime} - ${event.endTime}</span>`;
 
-    eventContainer.style.top = `${event.start.getMinutes()}px`;
+    eventContainer.style.top = `${new Date(event.start).getMinutes()}px`;
     eventContainer.style.height = `${
     (Date.parse(event.end) - Date.parse(event.start)) / 1000 / 60
   }px`;
@@ -53,17 +53,17 @@ export const renderEvents = () => {
     // не забудьте удалить с календаря старые события перед добавлением новых
 
     const allEvents = getItem("events");
-    const currentWeek = getItem("displayedWeekStart");
+    const currentWeek = new Date(getItem("displayedWeekStart"));
 
     allEvents
         .filter(
             (el) =>
-            el.start <= shmoment(currentWeek).add("days", 7).result() &&
-            el.start >= currentWeek
+            new Date(el.start) <= shmoment(currentWeek).add("days", 7).result() &&
+            new Date(el.start) >= currentWeek
         )
         .map((el) => {
-            const dataTime = el.start.getHours();
-            const dataDay = el.start.getDate();
+            const dataTime = new Date(el.start).getHours();
+            const dataDay = new Date(el.start).getDate();
 
             const timeSlot = document.querySelector(
                 `div[data-day="${dataDay}"] div[data-time="${dataTime}"]`

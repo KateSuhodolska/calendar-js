@@ -14,7 +14,7 @@ function renderCurrentMonth() {
     // вставить в .navigation__displayed-month
 
     displayedMonthElem.textContent = getDisplayedMonth(
-        getItem("displayedWeekStart")
+        new Date(getItem("displayedWeekStart"))
     );
 }
 
