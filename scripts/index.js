@@ -6,6 +6,10 @@ import { setItem } from "./common/storage.js";
 import { getStartOfWeek } from "./common/time.utils.js";
 import { initEventForm } from "./events/createEvent.js";
 
+!localStorage.getItem("events") ?
+    localStorage.setItem("events", JSON.stringify([])) :
+    localStorage.getItem("events");
+
 document.addEventListener("DOMContentLoaded", () => {
     // инициализация всех элементов
     renderTimescale();
